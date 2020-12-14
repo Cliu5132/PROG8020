@@ -1,0 +1,16 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/title'); -%>
+  <main>
+    <%- include('layouts/nav'); -%>
+    <section id="image">
+      <img src="/user_images/<%= page.heroImageName %>" alt="user image">
+    </section>
+
+    <article id="content">
+      <h1><%= page.pageTitle %></h1>
+      <%- page.pageDetail %>
+    </article>
+  </main>
+  <%- include('layouts/footer'); -%>
+</body>

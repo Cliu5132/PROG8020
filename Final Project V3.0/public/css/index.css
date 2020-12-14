@@ -1,0 +1,162 @@
+html {
+  background-color: lightgrey;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 1200px;
+  margin: 10px auto;
+}
+
+#logo {
+  float: left;
+  margin-bottom: 20px;
+  height: 80px;
+  width: 150px;
+}
+
+header h1 {
+  padding-top: 20px;
+  padding-left: 180px;
+}
+
+nav {
+  clear: left;
+  margin-bottom: 50px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 1em 0;
+  text-align: center;
+  border: 2px solid black;
+}
+
+nav ul li {
+  display: inline-block;
+  width: 13em;
+  height: 2em;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+.current {
+  background-color: black;
+  color: white;
+}
+
+#image img {
+  width: 1200px;
+  max-height: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+article {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+article h1 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+article {
+  padding: 10px;
+}
+
+#adminTitle {
+  text-align: center;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  margin: 50px auto;
+  color: black;
+  font-size: 20px;
+}
+
+td, th {
+  border: 2px solid black;
+  padding: 15px 20px;
+}
+
+th {
+  font-weight: bold;
+}
+
+#errors {
+  font-size: 40px;
+  color: red;
+  font-weight: bold;
+}
+
+/* login */
+#loginTitle,
+#loginContent {
+  text-align: center;
+}
+#loginContent {
+  margin: 100px 0;
+}
+.login {
+  padding: 0 200px 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 30%;
+  font-size: medium;
+  text-align: center;
+  margin: 8px 0;
+  padding: 12px 0;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 60%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 2px solid gray;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 120px;
+  height: 50px;
+  background-color: darkgray;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  border-radius: 5px;
+  clear: both;
+}
+
+button {
+  background-color: darkgray;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-size: larger;
+}
+
+footer {
+  border-top: 2px solid black;
+  text-align: center;
+}

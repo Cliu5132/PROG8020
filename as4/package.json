@@ -1,0 +1,21 @@
+{
+  "name": "cong_laptop_supply",
+  "version": "1.0.0",
+  "description": "An online shop for purchasing supplies for your laptop.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "^4.17.1",
+    "express-validator": "*",
+    "mongoose": "^5.11.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shop"
+  ],
+  "author": "Cliu5132",
+  "license": "ISC"
+}

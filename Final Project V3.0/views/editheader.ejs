@@ -1,0 +1,31 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/title'); -%>
+  <main>
+    <%- include('layouts/adminNav'); -%>
+    
+    <h1 id="loginTitle">Edit Header</h1>
+    <form action="" method="POST" enctype="multipart/form-data" action="">
+        <h1>Tagline: </h1>
+        <input type="text" name="tagTitle" id="tagTitle">
+        <br><br>
+        <h1>Logo image:</h1>
+        <input type="file" name="logo" id="heroImage">
+        <br><br>
+        <input type="submit" value="Submit">
+        <!-- <p id="errors">
+          <%
+            if(typeof(errors) != 'undefined'){
+              for(var error of errors){
+              %>
+                <p class="errors"><%= error.msg %></p>
+              <%
+              }
+            }
+          %>
+        </p> -->
+    </form>    
+  </main>
+</body>
+<%- include('layouts/footer'); -%>
+

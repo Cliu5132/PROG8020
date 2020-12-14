@@ -1,0 +1,18 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/title'); -%>
+  <main>
+    <%- include('layouts/adminNav'); -%>
+    <h1 id="loginTitle">Add Page</h1>
+    <form action="" method="POST" enctype="multipart/form-data" >
+        Page title: <input type="text" name="pageTitle" id="pageTitle">
+        <br><br>
+        Hero image: <input type="file" name="heroImage" id="heroImage">
+        <br><br>
+        <textarea style="width:600px;" name="pageDetail" id="pageDetail"></textarea>
+        <input type="submit" value="Submit">
+    </form>    
+  </main>
+
+</body>
+<%- include('layouts/footer'); -%>

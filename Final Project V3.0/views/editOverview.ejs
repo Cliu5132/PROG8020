@@ -1,0 +1,33 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/title'); -%>
+  <main>
+    <%- include('layouts/adminNav'); -%>
+    <h1 id="loginTitle">Edit pages</h1>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                     <th>Page</th>
+                     <th>Delete</th>
+                     <th>Edit</th>             
+                 </tr>
+            </thead>
+            <tbody>
+                 <%
+                     for(var page of pages){
+                         %>
+                            <tr>
+                                 <td><%= page.pageTitle %></td>
+                                 <td><a href="/delete/<%= page._id %>">Delete</a></td>
+                                 <td><a href="/edit/<%= page._id %>">Edit</a></td>
+                            </tr>
+                         <%
+                     }
+                 %>
+            </tbody>
+        </table>
+     </section>
+  </main>
+</body>
+<%- include('layouts/footer'); -%>

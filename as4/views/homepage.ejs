@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cong's Laptop Supply</title>
+  <link rel="stylesheet" type="text/css" href="css/form.css">
+  <script src="js/form.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="title">Welcome to Cong's Laptop Supply Shop</h1>
+    <hr>
+    <div class="formWrapper">
+      <form name="orderDetail" method="POST" onsubmit="return formSubmit();" action="">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="enter your name here"><br/>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="enter your email here"><br/>
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="text" placeholder="enter your phone here"><br/>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="enter password here"><br/>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" name="confirmPassword" type="password" placeholder="enter password again"><br/>
+
+        <label>Bluetooth Mouse(2$)</label>
+        <select id="mouse" name="mouse">
+          <option value="">-----Select Amount-----</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="5">8</option>
+          <option value="6">9</option>
+          <option value="7">10</option>
+        </select><br/>
+
+        <label>8GB RAM(20$)</label>
+        <select id="ram" name="ram">
+          <option value="">-----Select Amount-----</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="5">8</option>
+          <option value="6">9</option>
+          <option value="7">10</option>
+        </select><br/>
+
+        <label>500GB SSD(100$)</label>
+        <select id="ssd" name="ssd">
+          <option value="">-----Select Amount-----</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="5">8</option>
+          <option value="6">9</option>
+          <option value="7">10</option>
+        </select><br/>
+
+        <label for="creditCard">Credit Card</label>
+        <input id="creditCard" name="creditCard" type="text" placeholder="xxxx-xxxx-xxxx-xxxx"><br/>
+
+        <label for="province">Province</label>
+        <select id="province" name="province">
+          <option value="">-----select-----</option>
+          <option value="Alberta">Alberta</option>
+          <option value="British Columbia">British Columbia</option>
+          <option value="Manitoba">Manitoba</option>
+          <option value="New Brunswick">New Brunswick</option>
+          <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+          <option value="Northwest Territories">Northwest Territories</option>
+          <option value="Nova Scotia">Nova Scotia</option>
+          <option value="Nunavut">Nunavut</option>
+          <option value="Ontario">Ontario</option>
+          <option value="Prince Edward Island">Prince Edward Island</option>
+          <option value="Quebec">Quebec</option>
+          <option value="Saskatchewan">Saskatchewan</option>
+          <option value="Yukon">Yukon</option>
+        </select><br/>
+
+        <label for="city">City</label>
+        <input id="city" name="city" type="text" placeholder="enter city here"><br/>
+
+        <label class="high-label" for="address">Address</label>
+        <input id="address" name="address" rows="2" cols="35" placeholder="enter your address here"></input><br/>
+
+        <label>Want a receipt in paper form?</label>
+        <input class="paperReceiptInput short-width" type="radio" value="yes" id="yesPaperReceipt" name="paperReceipt">
+        <label class="short-width" for="yesPaperReceipt">Yes</label>
+        <input checked class="paperReceiptInput short-width" type="radio" value="no" id="noPaperReceipt" name="paperReceipt">
+        <label class="short-width" for="noPaperReceipt">No</label><br/>
+
+        <input id="submitButton" type="submit" value="Confirm Order">
+        <p id="error"></p>
+      </form>
+      <div class="orderReceipt">
+        <%
+          if(typeof(errors) != 'undefined'){
+            for(let error of errors){
+            %>
+              <p class="errors"><%= error.msg %></p>
+            <%
+            }
+          }
+        %>
+        <%
+          if(typeof(totalCost) != 'undefined'){
+            %>            
+              <p id="receipt">-------Your receipt:-------</p>
+              <table>
+                <tr>
+                  <th>Name: </th>
+                  <td><%= name %></td>
+                </tr>
+                <tr>
+                  <th>Email: </th>
+                  <td><%= email %></td>
+                </tr>
+                <tr>
+                  <th>Phone: </th>
+                  <td><%= phone %></td>
+                </tr>
+                <tr>
+                  <th>Password: </th>
+                  <td><%= password %></td>
+                </tr>
+                <%
+                  if(mouse){
+                  %>
+                    <tr>
+                      <th>Mouse * </th>
+                      <td><%= mouse %></td>
+                    </tr>
+                  <%
+                  }
+                %>
+                <%
+                  if(ram){
+                  %>
+                    <tr>
+                      <th>8GB RAM * </th>
+                      <td><%= ram %></td>
+                    </tr>
+                  <%
+                  }
+                %>
+                <%
+                  if(ssd){
+                  %>
+                    <tr>
+                      <th>500GB SSD * </th>
+                      <td><%= ssd %></td>
+                    </tr>
+                  <%
+                  }
+                %>
+                <tr>
+                  <th>CreditCard: </th>
+                  <td><%= creditCard %></td>
+                </tr>
+                <tr>
+                  <th>Province: </th>
+                  <td><%= province %></td>
+                </tr>
+                <tr>
+                  <th>City: </th>
+                  <td><%= city %></td>
+                </tr>
+                <tr>
+                  <th>Address: </th>
+                  <td><%= address %></td>
+                </tr>
+                <tr>
+                  <th>Paper receipt: </th>
+                  <td><%= paperReceipt %></td>
+                </tr>
+                <tr>
+                  <th>Total price: </th>
+                  <td><%= totalPrice %></td>
+                </tr>
+                <tr>
+                  <th>Total tax: </th>
+                  <td><%= totalTax %></td>
+                </tr>
+                <tr>
+                  <th>Total cost: </th>
+                  <td><%= totalCost %></td>
+                </tr>
+              </table>
+            <%
+          }
+        %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

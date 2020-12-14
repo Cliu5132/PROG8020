@@ -1,0 +1,31 @@
+<%- include('layouts/header'); -%>
+<body>
+  <%- include('layouts/title'); -%>
+  <main>
+    <%- include('layouts/nav'); -%>
+    <h1 id="loginTitle">Admin Login</h1>
+    <form name="loginForm" method="Post" action="">
+      <div class="login">
+        <label>Username : </label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          name="username"
+          required
+        />
+        <label>Password : </label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          required
+        />
+        <button type="submit">Submit</button>
+      </div>
+      <p id="errors">
+        <% if(typeof error !== 'undefined'){ %> <%= error %> <% } %>
+      </p>
+    </form>
+  </main>
+  <%- include('layouts/footer'); -%>
+</body>
